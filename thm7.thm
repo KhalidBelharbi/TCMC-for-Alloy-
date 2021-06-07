@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<alloy>
+
+<view>
+
+<projection> <type name="TS"/> </projection>
+
+<defaultnode/>
+
+<defaultedge/>
+
+<node>
+   <type name="Cancel_L_I"/>
+   <type name="Cancel_S_I"/>
+   <type name="Completed_and_Cancel"/>
+   <type name="Completed_L_F"/>
+   <type name="Completed_L_I"/>
+   <type name="Completed_L_S"/>
+   <type name="Finishing"/>
+   <type name="Int"/>
+   <type name="Leeching"/>
+   <type name="PeersDone"/>
+   <type name="Restard"/>
+   <type name="Seeding"/>
+   <type name="Share"/>
+   <type name="Start"/>
+   <type name="String"/>
+   <type name="TS"/>
+   <type name="univ"/>
+   <type name="seq/Int"/>
+   <set name="$initialState" type="State"/>
+   <set name="State0" type="Idle"/>
+   <set name="states" type="State"/>
+   <set name="transitions" type="Transition"/>
+</node>
+
+<node shape="Circle" color="Red">
+   <type name="Transition"/>
+</node>
+
+<node shape="Ellipse" color="Green">
+   <type name="Idle"/>
+</node>
+
+<node style="Bold" shape="Ellipse" color="Blue">
+   <type name="State"/>
+</node>
+
+<edge color="Black" style="Bold" merge="no" weight="8">
+   <relation name="next"> <type name="State"/> <type name="State"/> </relation>
+</edge>
+
+<edge color="Green" style="Bold" weight="6">
+   <relation name="relations"> <type name="Transition"/> <type name="State"/> <type name="State"/> </relation>
+</edge>
+
+<edge color="Magic" visible="no">
+   <relation name="dst"> <type name="Transition"/> <type name="State"/> </relation>
+   <relation name="src"> <type name="Transition"/> <type name="State"/> </relation>
+</edge>
+
+<edge style="Bold">
+   <relation name="Event"> <type name="State"/> <type name="Transition"/> </relation>
+</edge>
+
+</view>
+
+</alloy>
